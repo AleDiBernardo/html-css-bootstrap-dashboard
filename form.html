@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
+    <title>Nuovo Prodotto</title>
 
     <!-- Bootstrap -->
     <link
@@ -26,7 +26,6 @@
     <link rel="stylesheet" href="css/responsive.css" />
   </head>
   <body>
-
     <!-- HEADER -->
     <header>
       <nav
@@ -34,7 +33,7 @@
         data-bs-theme="dark"
       >
         <!-- Container -->
-        <div class="container">
+        <div class="container-fluid">
           <!-- brand -->
           <a class="navbar-brand" href="#">Bootstrap Dashboard</a>
           <!-- /brand -->
@@ -58,7 +57,6 @@
     </header>
     <!-- /HEADER -->
 
-
     <div class="container-fluid vh-100 d-md-flex">
       <div class="row flex-grow-1">
         <!-- SIDEBAR -->
@@ -73,38 +71,50 @@
             <span class="fs-5">Bootstrap Dashboard</span>
           </a>
           <hr class="text-white border d-none d-md-block" />
+          <!-- MENU SIDEBAR -->
           <ul class="nav nav-pills flex-column mb-auto">
             <li class="nav-item">
-              <a href="index.html" class="nav-link text-white" aria-current="page">
-                <i class="fa-solid fa-house px-1"></i>
+              <a
+                href="index.html"
+                class="nav-link text-white"
+                aria-current="page"
+              >
+                <i class="fa-solid fa-house px-1 d-none d-md-inline-block"></i>
                 Dashboard
               </a>
             </li>
             <li>
               <a href="sponsorization.html" class="nav-link text-white">
-                <i class="fa-solid fa-chart-line px-1"></i>
+                <i
+                  class="fa-solid fa-chart-line px-1 d-none d-md-inline-block"
+                ></i>
                 Sponsorizzazione
               </a>
             </li>
             <li>
               <a href="product.html" class="nav-link text-white">
-                <i class="fa-solid fa-box-archive px-1"></i>
+                <i
+                  class="fa-solid fa-box-archive px-1 d-none d-md-inline-block"
+                ></i>
                 Prodotti
               </a>
             </li>
             <li>
               <a href="form.html" class="nav-link active">
-                <i class="fa-solid fa-plus px-1"></i>
+                <i class="fa-solid fa-plus px-1 d-none d-md-inline-block"></i>
                 Nuovo prodotto
               </a>
             </li>
             <li>
               <a href="customer.html" class="nav-link text-white">
-                <i class="fa-solid fa-user-tie px-1"></i>
+                <i
+                  class="fa-solid fa-user-tie px-1 d-none d-md-inline-block"
+                ></i>
                 Clienti
               </a>
             </li>
           </ul>
+          <!-- /MENU SIDEBAR -->
           <hr />
           <div class="dropdown">
             <a
@@ -134,9 +144,239 @@
         <!-- /SIDEBAR -->
 
         <!-- Main -->
-        <main class="col-md-8 col-lg-9">
-            <h1>FORM</h1>
+        <main class="col-md-8 col-lg-9 pt-5">
+          <div class="container-fluid">
+            <!-- ROW -->
+            <div class="row row-cols-1 row-cols-lg-2 gy-2">
+              <div class="col-lg-12 text-center">
+                <div class="container-xs">
+                  <h3 class="mb-3 fw-bold fs-4">Crea un nuovo prodotto</h3>
+                  <p>
+                    I campi contrassegnati con un asterisco (*) sono
+                    obbligatori. Le immagini devono essere in formato PNG e non
+                    devono superare i 4 MB di dimensione
+                  </p>
+                </div>
+              </div>
 
+              <!-- FORM COL -->
+              <div class="col">
+                <!-- FORM -->
+                <form>
+                  <!-- PRODUCT NAME -->
+                  <div class="mb-3">
+                    <label for="prod_name" class="form-label">Nome</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="prod_name"
+                      placeholder="Samsung Galaxy 10 Plus"
+                    />
+                  </div>
+                  <!-- /PRODUCT NAME -->
+
+                  <!-- PRODUCT PRICE -->
+                  <div class="mb-3">
+                    <label for="prod_price" class="form-label">Prezzo</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="prod_price"
+                      placeholder="99.00"
+                    />
+                  </div>
+                  <!-- /PRODUCT PRICE -->
+
+                  <!-- SELECT BRAND -->
+                  <label for="prod_brand" class="form-label">Marca</label>
+
+                  <select class="form-select mb-3">
+                    <option selected>--- Seleziona ---</option>
+                    <option value="1">Samsung</option>
+                    <option value="2">Pixel</option>
+                    <option value="3">Apple</option>
+                  </select>
+                  <!-- /SELECT BRAND -->
+
+                  <!-- TEXTAREA -->
+                  <textarea
+                    class="form-control pb-5 mb-3"
+                    placeholder="Inserisci la descrizione del prodotto, massimo 1000 caratteri"
+                    id="prod_description"
+                  ></textarea>
+                  <!-- /TEXTAREA -->
+
+                  <!-- INPUT GROUP -->
+                  <div class="input-group mb-3">
+                    <input
+                      type="file"
+                      class="form-control"
+                      aria-describedby="add_image"
+                      aria-label="Upload"
+                    />
+                    <button
+                      class="btn btn-outline-secondary"
+                      type="button"
+                      id="add_image"
+                    >
+                      Immagine
+                    </button>
+                  </div>
+                  <!-- /INPUT GROUP -->
+
+                  <!-- BTN GROUP -->
+                  <div
+                    class="btn-group mb-3"
+                    role="group"
+                    aria-label="Basic radio toggle button group"
+                  >
+                    <input
+                      type="radio"
+                      class="btn-check"
+                      name="btnradio"
+                      id="btnradio1"
+                      autocomplete="off"
+                      checked
+                    />
+                    <label class="btn btn-outline-secondary p-1" for="btnradio1"
+                      >Disponibile</label
+                    >
+
+                    <input
+                      type="radio"
+                      class="btn-check"
+                      name="btnradio"
+                      id="btnradio2"
+                      autocomplete="off"
+                    />
+                    <label class="btn btn-outline-secondary p-1" for="btnradio2"
+                      >Esaurito</label
+                    >
+
+                    <input
+                      type="radio"
+                      class="btn-check"
+                      name="btnradio"
+                      id="btnradio3"
+                      autocomplete="off"
+                    />
+                    <label class="btn btn-outline-secondary p-1" for="btnradio3"
+                      >Fuori produzione</label
+                    >
+
+                    <input
+                      type="radio"
+                      class="btn-check"
+                      name="btnradio"
+                      id="btnradio4"
+                      autocomplete="off"
+                    />
+                    <label class="btn btn-outline-secondary p-1" for="btnradio4"
+                      >In arrivo</label
+                    >
+                  </div>
+                  <!-- /BTN GROUP -->
+                </form>
+                <!-- /FORM -->
+              </div>
+              <!-- /FORM COL -->
+
+              <!-- TECH SPECS COL -->
+              <div class="col">
+                <!-- TOP CHECKBOX -->
+                <div
+                  class="d-flex py-2 px-3 border border-1 border-bottom-0 rounded-top"
+                >
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" />
+                  </div>
+                  <div>
+                    <span>fotocamera principale</span>
+                    <p class="text-secondary m-0">
+                      foto di alta qualità e registrare video nitidi
+                    </p>
+                  </div>
+                </div>
+                <!-- /TOP CHECKBOX -->
+
+                <!-- CHECKBOX -->
+                <div class="d-flex py-2 px-3 border border-1 border-bottom-0">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" />
+                  </div>
+                  <div>
+                    <span>schermo OLED</span>
+                    <p class="text-secondary m-0">
+                      offre colori vividi per un esperienza straordinaria.
+                    </p>
+                  </div>
+                </div>
+                <!-- CHECKBOX -->
+
+                <!-- CHECKBOX -->
+                <div class="d-flex py-2 px-3 border border-1 border-bottom-0">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" />
+                  </div>
+                  <div>
+                    <span>processore Octa-core</span>
+                    <p class="text-secondary m-0">
+                      prestazioni fluide e veloci per eseguire le applicazioni
+                      più esigenti
+                    </p>
+                  </div>
+                </div>
+                <!-- CHECKBOX -->
+
+                <!-- CHECKBOX -->
+                <div class="d-flex py-2 px-3 border border-1 border-bottom-0">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" />
+                  </div>
+                  <div>
+                    <span>ricarica wireless</span>
+                    <p class="text-secondary m-0">
+                      consente di ricaricare lo smartphone comodamente senza
+                      l'uso di cavi
+                    </p>
+                  </div>
+                </div>
+                <!-- CHECKBOX -->
+
+                <!-- CHECKBOX -->
+                <div class="d-flex py-2 px-3 border border-1 border-bottom-0">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" />
+                  </div>
+                  <div>
+                    <span>connessione 5G</span>
+                    <p class="text-secondary m-0">
+                      navigazione ultra veloce e streaming senza interruzioni
+                    </p>
+                  </div>
+                </div>
+                <!-- CHECKBOX -->
+
+                <!-- CHECKBOX -->
+                <div class="d-flex py-2 px-3 border border-1 rounded-bottom">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" />
+                  </div>
+                  <div>
+                    <span>tecnologia NFC</span>
+                    <p class="text-secondary m-0">
+                      per effetuare pagamenti senza contatto
+                    </p>
+                  </div>
+                </div>
+                <!-- CHECKBOX -->
+              </div>
+              <!-- /TECH SPECS COL -->
+            </div>
+            <!-- /ROW -->
+
+            <button type="button" class="btn btn-primary">Salva</button>
+          </div>
         </main>
         <!-- /Main -->
       </div>
